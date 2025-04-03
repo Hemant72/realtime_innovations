@@ -301,15 +301,15 @@ class _DateDialogState extends State<DateDialog> {
   }
 
   Widget _buildBottomButtons() {
-    return Container(
-      padding: const EdgeInsets.all(16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
               Icon(Icons.calendar_today, color: Colors.blue),
-              const SizedBox(width: 8),
+              const SizedBox(width: 4),
               Text(
                 '${_selectedDate.day} ${_getMonth(_selectedDate.month)} ${_selectedDate.year}',
                 style: const TextStyle(fontSize: 16, color: Colors.black),
