@@ -105,13 +105,6 @@ class EmployeeListScreen extends StatelessWidget {
             (employee) => _buildEmployeeItem(context, employee),
           ),
         ],
-        const Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Text(
-            'Swipe left to delete',
-            style: TextStyle(fontSize: 14, color: Colors.grey),
-          ),
-        ),
       ],
     );
   }
@@ -141,21 +134,18 @@ class EmployeeListScreen extends StatelessWidget {
             ),
           );
         },
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: Colors.grey.shade300)),
+        child: ListTile(
+          shape: Border(
+            bottom: BorderSide(color: Colors.grey.shade300),
+            top: BorderSide(color: Colors.grey.shade300),
           ),
-          child: Column(
+          title: Text(
+            employee.name,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                employee.name,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               Text(
                 employee.role,
                 style: const TextStyle(

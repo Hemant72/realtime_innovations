@@ -56,14 +56,16 @@ class _DateDialogState extends State<DateDialog> {
           maxWidth: MediaQuery.of(context).size.width * 0.9,
           maxHeight: MediaQuery.of(context).size.height * 0.8,
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _buildQuickSelectButtons(),
-            _buildMonthHeader(),
-            _buildCalendar(),
-            _buildBottomButtons(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildQuickSelectButtons(),
+              _buildMonthHeader(),
+              _buildCalendar(),
+              _buildBottomButtons(),
+            ],
+          ),
         ),
       ),
     );
